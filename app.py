@@ -49,7 +49,7 @@ if st.button("📤 Factoriser"):
                     term_str = " + ".join(
                         [str(t).replace("**", "^").replace("*", "") for t in terms]
                     )
-                    label = f"x^{deg}" if deg > 1 else "x" if deg == 1 else "1"
+                    label = f"x^{deg}" if deg > 1 else "x" if deg == "autres" else "1"
                     st.latex(rf"\text{{Termes en }} {label} :\ {term_str}")
 
             # Réécriture + factorisation
