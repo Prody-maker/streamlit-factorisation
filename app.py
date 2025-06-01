@@ -66,10 +66,6 @@ if st.button("📤 Factoriser"):
 
             # Résultat final au même format que les étapes
             st.markdown("---")
-            st.markdown(
-                f"**✅ Résultat final mis en facteur :**  \n\\[ {latex(expr_factorisee)} \\]",
-                unsafe_allow_html=True
-            )
-
+            st.latex(rf"\text{{Résultat final mis en facteur : }} {latex(expr_factorisee)}")
         except Exception as e:
             st.error(f"Erreur lors de l'analyse : {e}")
