@@ -1,5 +1,5 @@
 import streamlit as st
-from sympy import symbols, Add, factor
+from sympy import latex, symbols, Add, factor
 from sympy.parsing.sympy_parser import (
     parse_expr,
     standard_transformations,
@@ -64,7 +64,12 @@ if st.button("📤 Factoriser"):
                     rf"\text{{Mise en facteur finale : }} {str(expr_factorisee).replace('**', '^').replace('*', '')}"
                 )
 
-            st.success(f"Résultat : {expr_factorisee}")
+            # Résultat final au même format que les étapes
+            st.markdown("---")
+            st.markdown(
+                f"**✅ Résultat final mis en facteur :**  \n\\[ {latex(expr_factorisee)} \\]",
+                unsafe_allow_html=True
+            )
 
         except Exception as e:
             st.error(f"Erreur lors de l'analyse : {e}")
